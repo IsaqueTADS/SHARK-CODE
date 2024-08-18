@@ -94,6 +94,10 @@ section {
     margin: 0 auto;
     padding: 0 20px;
 }
+.container h1 {
+    margin-right: 550px;
+
+}
 
 h2 {
     text-align: center;
@@ -215,6 +219,11 @@ footer p {
         flex-direction: column;
         text-align: center;
     }
+    header.container h1 {
+        margin-left: 90px;
+    
+    }
+    
 
     .navbar {
         flex-direction: column;

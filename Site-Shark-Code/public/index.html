@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icon/logo-sharkcode.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="icon/logo-sharkcode.ico" type="image/x-icon">
     <title>Nome da Empresa</title>
 </head>
 <body>
@@ -13,6 +12,7 @@
     <header>
         <div class="container">
             <img src="icon/logo-sharkcode.ico" alt="Logo da Empresa" class="logo">
+            <h1>SHARK CODE</h1>
             <nav>
                 <ul class="navbar">
                     <li><a href="#home">Início</a></li>
@@ -68,7 +68,7 @@
         <section id="contact">
             <div class="container">
                 <h2>Contato</h2>
-                <form action="#" method="POST">
+                <form id="contactForm" action="/contact" method="POST">
                     <div class="form-group">
                         <label for="name">Nome:</label>
                         <input type="text" id="name" name="name" required>
@@ -81,7 +81,7 @@
                         <label for="message">Mensagem:</label>
                         <textarea id="message" name="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn">Enviar</button>
+                    <button type="submit" id="submitBtn" class="btn">Enviar</button>
                 </form>
             </div>
         </section>
