@@ -1,10 +1,14 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Servir arquivos estáticos
+// Configura o body-parser para analisar dados do formulário
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Servir arquivos estáticos do diretório 'public' no nível superior
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Rota padrão
@@ -15,6 +19,19 @@ app.get('/', (req, res) => {
 // Rota de teste
 app.get('/teste', (req, res) => {
     res.send('Esta é uma rota de teste!');
+});
+
+// Rota para lidar com o envio do formulário
+app.post('/contact', (req, res) => {
+    const { name, email, message } = req.body;
+    
+    // Exibe os dados recebidos no console
+    console.log(`Nome: ${name}`);
+    console.log(`Email: ${email}`);
+    console.log(`Mensagem: ${message}`);
+    
+    // Envia uma resposta de sucesso
+    res.send('Formulário enviado com sucesso!');
 });
 
 // Iniciar o servidor
